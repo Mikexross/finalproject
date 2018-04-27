@@ -14,7 +14,7 @@ app.use(express.static("client/build"));
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://heroku_sm2x23t5:2rbh605gnhimsire6ucbc3plkf@ds259119.mlab.com:59119/heroku_sm2x23t5");
 
 // Start the API server
 app.listen(PORT, function() {
