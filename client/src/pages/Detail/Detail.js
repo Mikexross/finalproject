@@ -13,9 +13,10 @@ class Detail extends Component {
   componentDidMount() {
     API.getBook(this.props.match.params.id)
       .then(res => this.setState({ book: res.data }))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
+      .then(console.log(this.state.book.rental));
   }
-
+  
   render() {
     return (
       <Container fluid>
@@ -33,7 +34,18 @@ class Detail extends Component {
             <article>
               <h1>Amenities</h1>
               <p>
-                {this.state.book.amenities}
+                {this.state.book.cat_friendly}
+                {this.state.book.dog_friendly}
+                {this.state.book.w_dInUnit}
+                {this.state.book.w_dCoin}
+                {this.state.book.garage}
+                {this.state.book.furnished}
+                {this.state.book.fireplace}
+                {this.state.book.yard}
+                {this.state.book.gym}
+                {this.state.book.pool}
+                {this.state.book.hottub}
+                {this.state.book.smoking}
               </p>
             </article>
           </Col>

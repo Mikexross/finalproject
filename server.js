@@ -16,6 +16,10 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://heroku_sm2x23t5:2rbh605gnhimsire6ucbc3plkf@ds259119.mlab.com:59119/heroku_sm2x23t5");
 
+app.on('error', function (e) {
+  console.log(e);
+});
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
